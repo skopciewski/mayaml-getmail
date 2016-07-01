@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
                        %w(Gemfile LICENSE README.md CHANGELOG.md)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
 
-  spec.add_runtime_dependency "mayaml", "~1"
+  spec.add_runtime_dependency "mayaml", "~>1"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "minitest"
