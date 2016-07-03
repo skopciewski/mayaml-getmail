@@ -1,0 +1,20 @@
+[retriever]
+type = {{ type }}
+server = {{ server }}
+port = {{ port }}
+username = {{ user }}
+password = {{ pass }}
+{{#mailboxes}}
+mailboxes = ({{{ . }}})
+{{/mailboxes}}
+
+[destination]
+type = MDA_external
+path = {{ mda_path }}
+
+[options]
+verbose = 1
+delivered_to = false
+received = false
+read_all = {{ read_all }}
+delete = {{ delete }}

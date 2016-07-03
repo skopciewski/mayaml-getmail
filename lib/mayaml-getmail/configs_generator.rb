@@ -17,15 +17,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require "mayaml"
-require "mayaml-getmail/version"
-require "mayaml-getmail/account_config"
-require "mayaml-getmail/configs_generator"
-
 module MayamlGetmail
-  def self.configs_from_file(yaml_accounts)
-    accounts = ::Mayaml.accounts_from_file(yaml_accounts)
-    generator = ConfigsGenerator.new(AccountConfig.new)
-    generator.generates(accounts)
+  class ConfigsGenerator
+    def initialize(templater)
+      @templater = templater
+    end
+
+    def generates(accounts)
+      accounts.each_with_object({}) do |mail_account, result|
+        key = mail_account.name.to_sym
+        result[key] = @templater.render(mail_account)
+        result
+      end
+    end
   end
 end

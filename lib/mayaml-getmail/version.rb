@@ -2,7 +2,7 @@
 
 # Copyright (C) 2016 Szymon Kopciewski
 #
-# This file is part of Mayaml.
+# This file is part of MayamlGetmail.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
