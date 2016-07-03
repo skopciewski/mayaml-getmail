@@ -2,7 +2,7 @@
 
 # Copyright (C) 2016 Szymon Kopciewski
 #
-# This file is part of Mayaml.
+# This file is part of MayamlGetmail.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,24 +18,47 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 require "mayaml-getmail"
+require "fileutils"
 
 def puts_ussage_message
   puts <<-END_HELP
-    Ussage: mayaml-getmail <path_to_yaml_file>
+    Ussage: mayaml-getmail <path_to_yaml_file> [<configs_destination_dir>]
   END_HELP
 end
 
+def present_configs(configs)
+  configs.each do |name, config|
+    puts "### Name: #{name} " + "=" * 50
+    puts config
+    puts
+  end
+end
+
+def store_configs(configs, destination_dir)
+  FileUtils.mkdir_p destination_dir
+  configs.each do |name, config|
+    file_path = File.join destination_dir, name.to_s
+    File.open(file_path, "w") { |f| f.write(config) }
+  end
+end
+
+def check_yaml_path(yaml_path)
+  if yaml_path.nil?
+    puts_ussage_message
+    exit 1
+  end
+  unless File.exist? yaml_path
+    puts "Could not find file: #{yaml_path}"
+    exit 1
+  end
+end
+
 def main(args)
-  # yaml_path = args.shift
-  # if yaml_path.nil?
-  #   puts_ussage_message
-  #   exit 1
-  # elsif File.exist? yaml_path
-  #   MayamlGetmail.
-  # else
-  #   puts "Could not find file: #{yaml_path}"
-  #   exit 1
-  # end
+  yaml_path = args.shift
+  destination_dir = args.shift
+  check_yaml_path yaml_path
+  configs = MayamlGetmail.configs_from_file(yaml_path)
+  destination_dir.nil? ? present_configs(configs) : store_configs(configs, destination_dir)
 end
 
 main ARGV
