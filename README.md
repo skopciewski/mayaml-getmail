@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/mayaml-getmail.svg)](http://badge.fury.io/rb/mayaml-getmail)
 
+This is the getmail configs generator which gets the accounts settigns from yaml file. See [Mayaml][mayaml_url]
 
 ## Installation
 
@@ -19,6 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
+If ruby bin dir is in your PATH, just call `mayaml-getmail <path_to_the_yaml_file> [<dir_for_storing_configs>]` 
+to list generated configs or store them in `<dir_for_storing_configs>`.
+
 
 ## Versioning
 
@@ -33,3 +37,4 @@ See [semver.org][semver]
 5. Create new Pull Request
 
 [semver]: http://semver.org/
+[mayaml_url]: https://github.com/skopciewski/mayaml
