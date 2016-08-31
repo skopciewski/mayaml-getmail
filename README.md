@@ -24,6 +24,29 @@ Or install it yourself as:
 If ruby bin dir is in your PATH, just call `mayaml-getmail <path_to_the_yaml_file> [<dir_for_storing_configs>]` 
 to list generated configs or store them in `<dir_for_storing_configs>`.
 
+The result may looks like:
+```
+### Name: acc1 ==================================================
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = test.mailserver.net
+port = 998
+username = user@mailserver.net
+password = sercet_password
+mailboxes = ("INBOX")
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+unixfrom = True
+
+[options]
+verbose = 1
+delivered_to = false
+received = false
+read_all = true
+delete = true
+```
 
 ## Versioning
 

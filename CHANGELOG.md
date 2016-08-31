@@ -1,3 +1,7 @@
+=== 1.0.3 (2016.08.31)
+
+* update docs
+
 === 1.0.2 (2016.08.31)
 
 * update to use mayaml v2
