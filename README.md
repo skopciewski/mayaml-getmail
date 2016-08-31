@@ -1,6 +1,7 @@
 # MAYaml for Getmail
 
 [![Gem Version](https://badge.fury.io/rb/mayaml-getmail.svg)](http://badge.fury.io/rb/mayaml-getmail)
+[![Code Climate](https://codeclimate.com/github/skopciewski/mayaml-getmail/badges/gpa.svg)](https://codeclimate.com/github/skopciewski/mayaml-getmail)
 
 This is the getmail configs generator which gets the accounts settigns from yaml file. See [Mayaml][mayaml_url]
 
@@ -23,6 +24,29 @@ Or install it yourself as:
 If ruby bin dir is in your PATH, just call `mayaml-getmail <path_to_the_yaml_file> [<dir_for_storing_configs>]` 
 to list generated configs or store them in `<dir_for_storing_configs>`.
 
+The result may looks like:
+```
+### Name: acc1 ==================================================
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = test.mailserver.net
+port = 998
+username = user@mailserver.net
+password = sercet_password
+mailboxes = ("INBOX")
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+unixfrom = True
+
+[options]
+verbose = 1
+delivered_to = false
+received = false
+read_all = true
+delete = true
+```
 
 ## Versioning
 
