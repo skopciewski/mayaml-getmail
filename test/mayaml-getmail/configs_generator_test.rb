@@ -12,8 +12,10 @@ class MayamlGetmailConfigsGeneratorTest < Minitest::Test
   def account(name, type = :imap)
     account = ::Mayaml::MailAccount.new
     account.name = name
+    account.realname = "joe"
     account.type = type
     account.server = "test@test.com"
+    account.port = 999
     account.user = "user"
     account.pass = "pass"
     account
