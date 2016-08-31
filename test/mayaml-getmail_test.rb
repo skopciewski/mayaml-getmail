@@ -16,6 +16,6 @@ class MayamlGetmailTest < Minitest::Test
   end
 
   def test_that_it_returns_empty_hash_for_fake_file
-    assert_empty@configs
+    assert_empty @configs
   end
 end

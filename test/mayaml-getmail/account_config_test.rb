@@ -6,9 +6,12 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
   def setup
     @account = ::Mayaml::MailAccount.new
     @account.name = "test"
+    @account.type = :imap
+    @account.realname = "Joe Doe"
     @account.server = "test@test.com"
+    @account.port = 997
     @account.user = "user"
-    @account.user = "pass"
+    @account.pass = "pass"
     @account.mailboxes = %w(a b)
     @generator = ::MayamlGetmail::AccountConfig.new
     @config = @generator.render(@account)

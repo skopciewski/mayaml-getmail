@@ -1,0 +1,19 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - git checkout -qf $TRAVIS_BRANCH
+install:
+  - docker build -t mayaml .
+
+script:
+  - docker run -it --rm -e CODECLIMATE_REPO_TOKEN=$CC -v $TRAVIS_BUILD_DIR:/opt/project/code mayaml bundle exec rake
+
+deploy:
+  provider: rubygems
+  api_key: "$RG"
+  on:
+    branch: master
+    tags: true

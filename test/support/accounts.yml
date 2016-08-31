@@ -1,5 +1,6 @@
 ---
 - name: acc1
+  realname: Joe Doe
   type: imap
   server: test.mailserver.net
   port: 998
@@ -8,10 +9,10 @@
   mailboxes:
     - INBOX
 - name: acc2
+  realname: Joe Doe
+  default: true
   type: imap
   server: test.mailserver.net
-  port:
+  port: 998
   user: user@mailserver.net
   pass: sercet_password
-  mailboxes:
-
