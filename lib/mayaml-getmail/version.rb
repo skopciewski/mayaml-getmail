@@ -18,5 +18,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 module MayamlGetmail
-  VERSION = "1.0.3".freeze
+  VERSION = "3.0.0".freeze
 end
