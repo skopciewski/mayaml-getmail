@@ -1,3 +1,8 @@
+=== 3.0.0 (2016.09.07)
+
+* skip v2 release to be compatible with mayaml version
+* update to use mayaml v3
+
 === 1.0.3 (2016.08.31)
 
 * update docs
