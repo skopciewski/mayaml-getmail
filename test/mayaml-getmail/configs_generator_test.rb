@@ -18,6 +18,9 @@ class MayamlGetmailConfigsGeneratorTest < Minitest::Test
     account.port = 999
     account.user = "user"
     account.pass = "pass"
+    account.smtp_protocol = "smtps"
+    account.smtp_port = 555
+    account.smtp_authenticator = "login"
     account
   end
 
@@ -33,10 +36,28 @@ class MayamlGetmailConfigsGeneratorTest < Minitest::Test
     assert_equal true, results.key?(accounts.first.name.to_sym)
   end
 
-  def test_that_generator_return_hash_with_right_config
+  def test_that_generator_return_hash_with_pop3_config
     accounts = [account("acc1", :pop3)]
     results = @generator.generates(accounts)
+    assert_match(/type = SimplePOP3Retriever/, results[:acc1])
+  end
+
+  def test_that_generator_return_hash_with_pop3ssl_config
+    accounts = [account("acc1", :pop3ssl)]
+    results = @generator.generates(accounts)
     assert_match(/type = SimplePOP3SSLRetriever/, results[:acc1])
+  end
+
+  def test_that_generator_return_hash_with_imap_config
+    accounts = [account("acc1", :imap)]
+    results = @generator.generates(accounts)
+    assert_match(/type = SimpleIMAPRetriever/, results[:acc1])
+  end
+
+  def test_that_generator_return_hash_with_imapssl_config
+    accounts = [account("acc1", :imapssl)]
+    results = @generator.generates(accounts)
+    assert_match(/type = SimpleIMAPSSLRetriever/, results[:acc1])
   end
 
   def test_that_gernerator_generates_two_configs_for_two_accounts
