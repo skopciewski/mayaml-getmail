@@ -44,8 +44,10 @@ module MayamlGetmail
 
     def type(mail_account)
       types_map = {
-        imap: "SimpleIMAPSSLRetriever",
-        pop3: "SimplePOP3SSLRetriever"
+        imap: "SimpleIMAPRetriever",
+        imapssl: "SimpleIMAPSSLRetriever",
+        pop3: "SimplePOP3Retriever",
+        pop3ssl: "SimplePOP3SSLRetriever"
       }
       types_map.fetch mail_account.type
     end

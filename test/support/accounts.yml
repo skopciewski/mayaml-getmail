@@ -8,6 +8,9 @@
   pass: sercet_password
   mailboxes:
     - INBOX
+  smtp_protocol: smtp
+  smtp_port: 587
+  smtp_authenticator: digest-md5
 - name: acc2
   realname: Joe Doe
   default: true
@@ -16,3 +19,6 @@
   port: 998
   user: user@mailserver.net
   pass: sercet_password
+  smtp_protocol: smtps
+  smtp_port: 487
+  smtp_authenticator: login

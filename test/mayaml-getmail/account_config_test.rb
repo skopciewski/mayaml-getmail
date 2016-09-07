@@ -6,13 +6,16 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
   def setup
     @account = ::Mayaml::MailAccount.new
     @account.name = "test"
-    @account.type = :imap
+    @account.type = :imapssl
     @account.realname = "Joe Doe"
     @account.server = "test@test.com"
     @account.port = 997
     @account.user = "user"
     @account.pass = "pass"
     @account.mailboxes = %w(a b)
+    @account.smtp_protocol = :smtp
+    @account.smtp_port = 567
+    @account.smtp_authenticator = "login"
     @generator = ::MayamlGetmail::AccountConfig.new
     @config = @generator.render(@account)
   end
@@ -21,7 +24,7 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
     assert_match(/^\[retriever\]/, @config)
   end
 
-  def test_that_template_has_imap_type
+  def test_that_template_has_right_type
     assert_match(/type = SimpleIMAPSSLRetriever/, @config)
   end
 
