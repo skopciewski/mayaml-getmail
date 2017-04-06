@@ -11,6 +11,7 @@
   smtp_protocol: smtp
   smtp_port: 587
   smtp_authenticator: digest-md5
+  smtp_server: test.mailserver.org
 - name: acc2
   realname: Joe Doe
   default: true
@@ -22,3 +23,4 @@
   smtp_protocol: smtps
   smtp_port: 487
   smtp_authenticator: login
+  smtp_server: test.mailserver.org

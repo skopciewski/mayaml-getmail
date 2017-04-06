@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/mayaml-getmail.svg)](http://badge.fury.io/rb/mayaml-getmail)
 [![Code Climate](https://codeclimate.com/github/skopciewski/mayaml-getmail/badges/gpa.svg)](https://codeclimate.com/github/skopciewski/mayaml-getmail)
+[![Dependency Status](https://gemnasium.com/badges/github.com/skopciewski/mayaml-getmail.svg)](https://gemnasium.com/github.com/skopciewski/mayaml-getmail)
 
 This is the getmail configs generator which gets the accounts settigns from yaml file. See [Mayaml][mayaml_url]
 

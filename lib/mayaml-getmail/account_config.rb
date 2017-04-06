@@ -1,4 +1,5 @@
 # encoding: utf-8
+# frozen_string_literal: true
 
 # Copyright (C) 2016 Szymon Kopciewski
 #
@@ -21,13 +22,9 @@ require "mustache"
 
 module MayamlGetmail
   class AccountConfig
-    def initialize
-      @template = IO.read(File.join(File.dirname(__FILE__), "account_config.mustache"))
-    end
-
     def render(mail_account, config = {})
       ::Mustache.render(
-        @template,
+        IO.read(template_file_path),
         type: type(mail_account),
         server: mail_account.server,
         port: mail_account.port,
@@ -41,6 +38,10 @@ module MayamlGetmail
     end
 
     private
+
+    def template_file_path
+      File.join(Gem.datadir("mayaml-getmail"), "account_config.mustache")
+    end
 
     def type(mail_account)
       types_map = {
