@@ -1,3 +1,7 @@
+### 4.0.2 (2017.04.06)
+
+* add missing data dir to gemspec
+
 ### 4.0.1 (2017.04.06)
 
 * fix makefile
