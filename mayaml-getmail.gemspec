@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.license       = "GPL-3.0"
 
   spec.require_paths = ["lib"]
-  spec.files         = Dir.glob("{bin,lib}/**/*") + \
+  spec.files         = Dir.glob("{bin,lib,data}/**/*") + \
                        %w(Gemfile LICENSE README.md CHANGELOG.md)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
 
