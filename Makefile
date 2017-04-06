@@ -1,4 +1,4 @@
-PROJECT := mayaml
+PROJECT := mayaml-getmail
 IMAGE := ${PROJECT}_dev
 CONTAINER := ${PROJECT}
 BASE_IMAGE := $(shell docker images -q ${IMAGE}:latest)
