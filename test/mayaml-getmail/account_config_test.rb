@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "test_helper"
 require "mayaml-getmail/account_config"
 require "mayaml/mail_account"
@@ -8,7 +9,7 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
     @account.name = "test"
     @account.type = :imapssl
     @account.realname = "Joe Doe"
-    @account.server = "test@test.com"
+    @account.server = "test.test.com"
     @account.port = 997
     @account.user = "user"
     @account.pass = "pass"
@@ -16,6 +17,7 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
     @account.smtp_protocol = :smtp
     @account.smtp_port = 567
     @account.smtp_authenticator = "login"
+    @account.smtp_server = "test.test.org"
     @generator = ::MayamlGetmail::AccountConfig.new
     @config = @generator.render(@account)
   end

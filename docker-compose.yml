@@ -1,5 +1,0 @@
-dev:
-  build: .
-  command: 'true'
-  volumes:
-    - .:/opt/project/code

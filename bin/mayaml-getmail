@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-# Copyright (C) 2016 Szymon Kopciewski
+# Copyright (C) 2016, 2017 Szymon Kopciewski
 #
 # This file is part of MayamlGetmail.
 #
@@ -47,10 +48,9 @@ def check_yaml_path(yaml_path)
     puts_ussage_message
     exit 1
   end
-  unless File.exist? yaml_path
-    puts "Could not find file: #{yaml_path}"
-    exit 1
-  end
+  return if File.exist? yaml_path
+  puts "Could not find file: #{yaml_path}"
+  exit 1
 end
 
 def main(args)
