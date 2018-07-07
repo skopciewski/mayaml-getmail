@@ -18,15 +18,15 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
   spec.files         = Dir.glob("{bin,lib,data}/**/*") + \
-                       %w(Gemfile LICENSE README.md CHANGELOG.md)
+                       %w[Gemfile LICENSE README.md CHANGELOG.md]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
 
   spec.add_runtime_dependency "mayaml", "~>4"
   spec.add_runtime_dependency "mustache", "~> 1.0"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "pry"
+  spec.add_development_dependency "codeclimate-test-reporter"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "minitest-reporters"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "simplecov"
-  spec.add_development_dependency "codeclimate-test-reporter"
 end
