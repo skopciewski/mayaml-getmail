@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/mayaml-getmail.svg)](http://badge.fury.io/rb/mayaml-getmail)
 [![Code Climate](https://codeclimate.com/github/skopciewski/mayaml-getmail/badges/gpa.svg)](https://codeclimate.com/github/skopciewski/mayaml-getmail)
-[![Dependency Status](https://gemnasium.com/badges/github.com/skopciewski/mayaml-getmail.svg)](https://gemnasium.com/github.com/skopciewski/mayaml-getmail)
 
 This is the getmail configs generator which gets the accounts settigns from yaml file. See [Mayaml][mayaml_url]
 
@@ -22,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-If ruby bin dir is in your PATH, just call `mayaml-getmail <path_to_the_yaml_file> [<dir_for_storing_configs>]` 
+If ruby bin dir is in your PATH, just call `mayaml-getmail <path_to_the_yaml_file> [<dir_for_storing_configs>]`
 to list generated configs or store them in `<dir_for_storing_configs>`.
 
 The result may looks like:
