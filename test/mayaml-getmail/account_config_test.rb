@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "test_helper"
 require "mayaml-getmail/account_config"
 require "mayaml/mail_account"
@@ -13,7 +14,7 @@ class MayamlGetmailAccountConfigTest < Minitest::Test
     @account.port = 997
     @account.user = "user"
     @account.pass = "pass"
-    @account.mailboxes = %w(a b)
+    @account.mailboxes = %w[a b]
     @account.smtp_protocol = :smtp
     @account.smtp_port = 567
     @account.smtp_authenticator = "login"

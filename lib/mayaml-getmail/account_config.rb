@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Copyright (C) 2016, 2017 Szymon Kopciewski
+# Copyright (C) 2016, 2017, 2018 Szymon Kopciewski
 #
 # This file is part of MayamlGetmail.
 #
@@ -39,7 +39,7 @@ module MayamlGetmail
     private
 
     def template_file_path
-      File.join(Gem.datadir("mayaml-getmail"), "account_config.mustache")
+      File.join(Gem.latest_spec_for("mayaml-getmail").datadir, "account_config.mustache")
     end
 
     def type(mail_account)

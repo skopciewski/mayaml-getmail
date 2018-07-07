@@ -1,3 +1,8 @@
+### 4.0.3 (2018.07.07)
+
+* fix warnings, travis, docs
+* update license
+
 ### 4.0.2 (2017.04.06)
 
 * add missing data dir to gemspec

@@ -4,6 +4,7 @@ services:
   - docker
 
 before_install:
+  - sudo chmod 777 $TRAVIS_BUILD_DIR
   - git checkout -qf $TRAVIS_BRANCH
 install:
   - docker build -t thegem .
