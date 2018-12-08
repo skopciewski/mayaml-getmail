@@ -1,3 +1,7 @@
+### 4.0.4 (2018.12.08)
+
+* move templates to the lib
+
 ### 4.0.3 (2018.07.07)
 
 * fix warnings, travis, docs
