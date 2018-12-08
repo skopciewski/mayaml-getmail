@@ -7,7 +7,6 @@ end
 
 require "minitest/autorun"
 require "minitest/reporters"
-require "support/rubygems_fix_00"
 
 reporter_options = { color: true }
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_options)]

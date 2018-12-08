@@ -39,7 +39,8 @@ module MayamlGetmail
     private
 
     def template_file_path
-      File.join(Gem.latest_spec_for("mayaml-getmail").datadir, "account_config.mustache")
+      templates_dir = File.expand_path("../templates", __dir__)
+      File.join(templates_dir, "account_config.mustache")
     end
 
     def type(mail_account)
